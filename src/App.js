@@ -26,7 +26,7 @@ function App(props) {
     }
     if (res.lastAction && action.event) {
       action.event.preventDefault();
-      console.log("nav-event: ", res.lastAction);
+      console.log("app-event: ", res.lastAction);
     }
     return res;
   },{
@@ -41,17 +41,14 @@ function App(props) {
     }
   } 
 
-  //Render Icon(s)
   useEffect(() => {
     window.feather.replace();
-  });
-
-  useEffect(() => {
     document.addEventListener('click', handler);
     return () => {
+      console.log("app-hanlder removed");
       document.removeEventListener('click', handler);
     };
-  });
+  },[state.isLoggedIn]);
 
   return (
     <React.Fragment>
@@ -96,7 +93,11 @@ function AppFooter(props) {
     <footer>
       <hr/>
       <p>
-        Powered By: <span title="Bourbon &amp; Bad Choices">React &amp; Bootstrap</span>
+        Powered By: <span title="Bourbon &amp; Bad Choices">
+          <a href="http://reactjs.org">React</a> 
+          &nbsp;&amp;&nbsp;
+          <a href="http://getbootstrap.com">Bootstrap</a>
+        </span>
       </p>
     </footer>
   );
