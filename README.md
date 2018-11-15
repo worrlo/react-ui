@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+The UI is a merging of the Jumbotron and Dashboard examples pulled found on the [Bootstrap Examples](https://getbootstrap.com/docs/4.1/examples/) page.
 ## Available Scripts
 
 In the project directory, you can run:
